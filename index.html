@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Ride - Luxury Transportation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        header {
+    background: linear-gradient(rgba(0,0,0,1), rgba(0, 0, 0, 1));
+
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./BMW-7-Series-1024x683.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 200px 20px;
+            
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: gold;
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: gold;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .about {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.about-content {
+    text-align: center;
+}
+.about-image {
+    flex: 0 0 400px; /* Don't grow or shrink, stay at 400px */
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.02);
+}
+
+.about-text h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+.about-text p {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 18px;
+}
+
+.about-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature h3 {
+    color: gold;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.feature p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-features {
+        flex-direction: column;
+    }
+    
+    .feature {
+        margin-bottom: 20px;
+    }
+}
+        .cta-btn {
+            display: inline-block;
+            background-color: gold;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+        .cta-btn:hover {
+            background-color: #FFD700;
+        }
+        .sign-in-modal {
+            display: none;
+            position: fixed;
+            z-index: 1500;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-btn:hover {
+            color: black;
+        }
+        .services {
+            background-color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .service-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .service-card {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 30px;
+            width: 30%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+        .service-card h3 {
+            color: gold;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+        }
+        .icons {
+    margin-top: 20px;
+}
+
+.icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;  /* or any color you prefer */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icons i:hover {
+    color: gold;  /* matches your website's theme */
+}
+.icons a {
+    text-decoration: none;
+    color: #333;
+}
+
+.icons a:hover {
+    color: gold;
+}
+.add-ride-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.feature-grid {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.checkbox-group {
+    display: inline-block;
+    margin: 10px 20px 10px 0;
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.preview-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.preview-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.booking-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.summary-details {
+    margin-top: 10px;
+}
+
+.summary-details p {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group select, 
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-group select {
+    background-color: white;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.success-message {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    
+   
+        <header>
+        <div class="container nav">
+            <div class="logo">Golden Ride</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        
+        <div class="container hero-content">
+            <h1>Luxury Transportation</h1>
+            <p>Elevate your journey with our premium ride-sharing service.</p>
+            <a href="#" class="cta-btn">Add Ride</a>
+            <a href="#" class="cta-btn">Book Ride</a>
+            <a href="#" class="cta-btn" id="sign-in-btn">Sign In</a>
+        </div>
+    </section>
+
+    <!-- Add Ride Modal -->
+<div id="add-ride-modal" class="sign-in-modal">
+    <div class="modal-content" style="width: 600px;">
+        <span class="close-btn" id="close-add-ride">&times;</span>
+        <h2>Add Your Vehicle</h2>
+        <form id="add-ride-form">
+            <div class="add-ride-grid">
+                <div class="input-group">
+                    <i class="fas fa-car"></i>
+                    <select name="vehicleType" required>
+                        <option value="">Select Vehicle Type</option>
+                        <option value="range-rover">Range Rover</option>
+                        <option value="porsche">Porsche</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="bmw">BMW</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-car"></i>
+                    <input type="text" name="model" placeholder="Model (e.g., S-Class, X5)" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-calendar"></i>
+                    <input type="number" name="year" placeholder="Year" min="2000" max="2024" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-palette"></i>
+                    <input type="text" name="color" placeholder="Vehicle Color" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-money-bill"></i>
+                    <input type="number" name="price" placeholder="Price per day (SZL)" min="500" max="2500" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" name="licensePlate" placeholder="License Plate Number" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <i class="fas fa-camera"></i>
+                    <input type="file" name="vehiclePhotos" accept="image/*" multiple required>
+                </div>
+
+                <div class="input-group full-width">
+                    <i class="fas fa-info-circle"></i>
+                    <textarea name="description" placeholder="Vehicle Description" rows="3" required></textarea>
+                </div>
+
+                <div class="feature-grid full-width">
+                    <h3>Vehicle Features</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="ac" name="features" value="ac">
+                        <label for="ac">Air Conditioning</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="leather" name="features" value="leather">
+                        <label for="leather">Leather Seats</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="gps" name="features" value="gps">
+                        <label for="gps">GPS Navigation</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="bluetooth" name="features" value="bluetooth">
+                        <label for="bluetooth">Bluetooth</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="cta-btn">List Vehicle</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Book Ride Modal -->
+<div id="book-ride-modal" class="sign-in-modal">
+    <div class="modal-content" style="width: 600px;">
+        <span class="close-btn" id="close-book-ride">&times;</span>
+        <h2>Book Your Luxury Ride</h2>
+        <form id="book-ride-form">
+            <div class="booking-grid">
+                <div class="input-group">
+                    <i class="fas fa-car"></i>
+                    <select name="carType" required>
+                        <option value="">Select Vehicle</option>
+                        <option value="range-rover">Range Rover (SZL 2500.00)</option>
+                        <option value="porsche">Porsche (SZL 2000.00)</option>
+                        <option value="mercedes">Mercedes-Benz (SZL 1500.00)</option>
+                        <option value="bmw">BMW (SZL 500.00)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-calendar"></i>
+                    <input type="date" name="date" required min="">
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-clock"></i>
+                    <input type="time" name="time" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" name="pickupLocation" placeholder="Pickup Location" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" name="dropoffLocation" placeholder="Drop-off Location" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-users"></i>
+                    <select name="passengers" required>
+                        <option value="">Number of Passengers</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <h3>Booking Summary</h3>
+                <div class="summary-details">
+                    <p>Selected Vehicle: <span id="selected-car">-</span></p>
+                    <p>Base Price: <span id="base-price">-</span></p>
+                    <p>Total Price: <span id="total-price">-</span></p>
+                </div>
+            </div>
+
+            <button type="submit" class="cta-btn">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+
+
+    <!-- Sign In Modal -->
+    <div id="sign-in-modal" class="sign-in-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign In</h2>
+            <form id="sign-in-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="cta-btn">Sign In</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="create-account">Create Account</a></p>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Executive Rides</h3>
+                    <p>Premium vehicles for business and corporate transportation</p>
+                </div>
+                <div class="service-card">
+                    <h3>Hourly Rentals</h3>
+                    <p>Flexible booking with professional drivers at your service</p>
+                </div>
+                <div class="service-card">
+                    <h3>Airport Transfers</h3>
+                    <p>Seamless and comfortable transfers to and from airports</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="./Stock-image-mercedes-Uber-bonus-1170x720.jpg" alt="Luxury car service" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h2>About Golden Ride</h2>
+                    <p>Founded with a vision of redefining luxury transportation, Golden Ride has established itself as a premier provider of exclusive transportation services. We combine elegance, reliability, and exceptional customer service to deliver an unparalleled riding experience.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <h3>Premium Fleet</h3>
+                            <p>Our carefully curated fleet of luxury vehicles ensures comfort and style for every journey.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Professional Drivers</h3>
+                            <p>Our experienced chauffeurs are trained to provide courteous, professional service while prioritizing your safety.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>24/7 Service</h3>
+                            <p>Available round the clock to serve your transportation needs with unwavering dedication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>Contact Us</h4>
+                    <p>Email📩: siphumishabza@gmail.com</p>
+                    <p>Phone📞: (+268) 78450049/79590367</p>
+                </div>
+                <div class="icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p>&copy; 2024 Golden Ride. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    
+       
+    <div id="sign-in-modal" class="sign-in-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign In</h2>
+            <form id="sign-in-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="cta-btn">Sign In</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="create-account">Create Account</a></p>
+        </div>
+    </div>
+    <div id="create-account-modal" class="sign-in-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-create-account">&times;</span>
+            <h2>Create Account</h2>
+            <form id="create-account-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="cta-btn">Create Account</button>
+            </form>
+            <p>Already have an account? <a href="#" id="back-to-signin">Sign In</a></p>
+        </div>
+    </div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements
+    const addRideBtn = document.querySelector('.cta-btn[href="#"]');
+    const addRideModal = document.getElementById('add-ride-modal');
+    const closeAddRideBtn = document.getElementById('close-add-ride');
+    const addRideForm = document.getElementById('add-ride-form');
+
+    // Show add ride modal
+    addRideBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Check if user is logged in
+        const user = localStorage.getItem('user');
+        if (!user) {
+            alert('Please sign in to list your vehicle');
+            signInModal.style.display = 'block';
+            return;
+        }
+        
+        addRideModal.style.display = 'block';
+    });
+
+    // Close add ride modal
+    closeAddRideBtn.addEventListener('click', () => {
+        addRideModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === addRideModal) {
+            addRideModal.style.display = 'none';
+        }
+    });
+
+    // Set current year as max for year input
+    const yearInput = addRideForm.querySelector('input[name="year"]');
+    yearInput.max = new Date().getFullYear();
+
+    // Handle image preview
+    const photoInput = addRideForm.querySelector('input[name="vehiclePhotos"]');
+    const previewContainer = document.createElement('div');
+    previewContainer.className = 'preview-images';
+    photoInput.parentNode.appendChild(previewContainer);
+
+    photoInput.addEventListener('change', function(e) {
+        previewContainer.innerHTML = '';
+        Array.from(this.files).forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                previewContainer.appendChild(img);
+            }
+            reader.readAsDataURL(file);
+        });
+    });
+
+    // Handle form submission
+    addRideForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(addRideForm);
+        const features = Array.from(addRideForm.querySelectorAll('input[name="features"]:checked'))
+            .map(cb => cb.value);
+
+        const vehicleData = {
+            id: generateVehicleId(),
+            vehicleType: formData.get('vehicleType'),
+            model: formData.get('model'),
+            year: formData.get('year'),
+            color: formData.get('color'),
+            price: formData.get('price'),
+            licensePlate: formData.get('licensePlate'),
+            description: formData.get('description'),
+            features: features,
+            owner: JSON.parse(localStorage.getItem('user')).email,
+            status: 'available',
+            dateAdded: new Date().toISOString(),
+            // In a real app, photos would be uploaded to a server
+            // Here we'll just store a placeholder
+            photos: ['/api/placeholder/400/300']
+        };
+
+        // Validate price range
+        if (vehicleData.price < 500 || vehicleData.price > 2500) {
+            showError('Price must be between SZL 500 and SZL 2500', addRideForm);
+            return;
+        }
+
+        // Get existing vehicles or initialize empty array
+        const vehicles = JSON.parse(localStorage.getItem('vehicles')) || [];
+        
+        // Add new vehicle
+        vehicles.push(vehicleData);
+        localStorage.setItem('vehicles', JSON.stringify(vehicles));
+
+        // Show success message
+        showSuccess('Vehicle listed successfully!', addRideForm);
+        
+        // Reset form and close modal after delay
+        setTimeout(() => {
+            addRideForm.reset();
+            previewContainer.innerHTML = '';
+            addRideModal.style.display = 'none';
+        }, 2000);
+    });
+
+    // Generate unique vehicle ID
+    function generateVehicleId() {
+        return 'VEH' + Date.now().toString().slice(-6) + Math.random().toString(36).slice(-2).toUpperCase();
+    }
+
+    // Show error message
+    function showError(message, form) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.color = 'red';
+        errorDiv.style.marginTop = '10px';
+        errorDiv.textContent = message;
+        
+        const existingMessage = form.querySelector('.error-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        form.appendChild(errorDiv);
+    }
+
+    // Show success message
+    function showSuccess(message, form) {
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-message';
+        successDiv.style.color = 'green';
+        successDiv.style.marginTop = '10px';
+        successDiv.textContent = message;
+        
+        const existingMessage = form.querySelector('.success-message, .error-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        form.appendChild(successDiv);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements
+    const bookRideBtn = document.querySelector('.cta-btn[href="#"]');
+    const bookRideModal = document.getElementById('book-ride-modal');
+    const closeBookRideBtn = document.getElementById('close-book-ride');
+    const bookRideForm = document.getElementById('book-ride-form');
+
+    // Car prices and details
+    const carDetails = {
+        'range-rover': {
+            name: 'Range Rover',
+            price: 2500.00,
+            image: './range-rover.jpg'
+        },
+        'porsche': {
+            name: 'Porsche',
+            price: 2000.00,
+            image: './porsche.jpg'
+        },
+        'mercedes': {
+            name: 'Mercedes-Benz',
+            price: 1500.00,
+            image: './mercedes.jpg'
+        },
+        'bmw': {
+            name: 'BMW',
+            price: 500.00,
+            image: './bmw.jpg'
+        }
+    };
+
+    // Set minimum date to today
+    const dateInput = bookRideForm.querySelector('input[type="date"]');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+
+    // Show book ride modal
+    bookRideBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Check if user is logged in
+        const user = localStorage.getItem('user');
+        if (!user) {
+            alert('Please sign in to book a ride');
+            signInModal.style.display = 'block';
+            return;
+        }
+        
+        bookRideModal.style.display = 'block';
+    });
+
+    // Close book ride modal
+    closeBookRideBtn.addEventListener('click', () => {
+        bookRideModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === bookRideModal) {
+            bookRideModal.style.display = 'none';
+        }
+    });
+
+    // Update booking summary when car is selected
+    const carSelect = bookRideForm.querySelector('select[name="carType"]');
+    carSelect.addEventListener('change', updateBookingSummary);
+
+    function updateBookingSummary() {
+        const selectedCar = carSelect.value;
+        const selectedCarSpan = document.getElementById('selected-car');
+        const basePriceSpan = document.getElementById('base-price');
+        const totalPriceSpan = document.getElementById('total-price');
+
+        if (selectedCar) {
+            const car = carDetails[selectedCar];
+            selectedCarSpan.textContent = car.name;
+            basePriceSpan.textContent = `SZL ${car.price.toFixed(2)}`;
+            totalPriceSpan.textContent = `SZL ${car.price.toFixed(2)}`;
+        } else {
+            selectedCarSpan.textContent = '-';
+            basePriceSpan.textContent = '-';
+            totalPriceSpan.textContent = '-';
+        }
+    }
+
+    // Handle form submission
+    bookRideForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(bookRideForm);
+        const bookingData = {
+            carType: formData.get('carType'),
+            date: formData.get('date'),
+            time: formData.get('time'),
+            pickupLocation: formData.get('pickupLocation'),
+            dropoffLocation: formData.get('dropoffLocation'),
+            passengers: formData.get('passengers'),
+            price: carDetails[formData.get('carType')].price,
+            user: JSON.parse(localStorage.getItem('user')).email,
+            bookingId: generateBookingId(),
+            status: 'pending'
+        };
+
+        // Get existing bookings or initialize empty array
+        const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+        
+        // Add new booking
+        bookings.push(bookingData);
+        localStorage.setItem('bookings', JSON.stringify(bookings));
+
+        // Show success message
+        showSuccess('Booking confirmed! Our team will contact you shortly.', bookRideForm);
+        
+        // Reset form and close modal after delay
+        setTimeout(() => {
+            bookRideForm.reset();
+            bookRideModal.style.display = 'none';
+            updateBookingSummary();
+        }, 2000);
+    });
+
+    // Generate unique booking ID
+    function generateBookingId() {
+        return 'BK' + Date.now().toString().slice(-6) + Math.random().toString(36).slice(-2).toUpperCase();
+    }
+
+    // Show success message
+    function showSuccess(message, form) {
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-message';
+        successDiv.style.color = 'green';
+        successDiv.style.marginTop = '10px';
+        successDiv.textContent = message;
+        
+        const existingMessage = form.querySelector('.success-message, .error-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        form.appendChild(successDiv);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+        // Get DOM elements
+        const signInBtn = document.getElementById('sign-in-btn');
+        const signInModal = document.getElementById('sign-in-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const signInForm = document.getElementById('sign-in-form');
+        
+        // Sample user data (in a real app, this would be in a database)
+        const users = [
+            { email: 'test@example.com', password: 'password123' },
+            { email: 'user@example.com', password: 'userpass' }
+        ];
+
+        // Open modal when clicking Sign In button
+        signInBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            signInModal.style.display = 'block';
+        });
+
+        // Close modal when clicking the close button
+        closeBtn.addEventListener('click', () => {
+            signInModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === signInModal) {
+                signInModal.style.display = 'none';
+            }
+        });
+
+        // Handle form submission
+        signInForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = signInForm.querySelector('input[type="email"]').value.trim();
+            const password = signInForm.querySelector('input[type="password"]').value;
+
+            // Basic validation
+            if (!email || !password) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            setLoading(true);
+
+            // Simulate API call
+            setTimeout(() => {
+                const user = users.find(u => u.email === email && u.password === password);
+                
+                if (user) {
+                    localStorage.setItem('user', JSON.stringify({ email: user.email }));
+                    signInModal.style.display = 'none';
+                    updateUIForLoggedInUser(user.email);
+                    signInForm.reset();
+                } else {
+                    showError('Invalid email or password');
+                }
+                
+                setLoading(false);
+            }, 1000);
+        });
+
+        // Show error message
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.color = 'red';
+            errorDiv.style.marginTop = '10px';
+            errorDiv.textContent = message;
+            
+            const existingError = signInForm.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            signInForm.appendChild(errorDiv);
+        }
+
+        // Handle loading state
+        function setLoading(isLoading) {
+            const submitButton = signInForm.querySelector('button[type="submit"]');
+            submitButton.textContent = isLoading ? 'Signing in...' : 'Sign In';
+            submitButton.disabled = isLoading;
+        }
+
+        // Update UI for logged-in user
+        function updateUIForLoggedInUser(email) {
+            signInBtn.textContent = email;
+            
+            const existingSignOutBtn = document.querySelector('.sign-out-btn');
+            if (!existingSignOutBtn) {
+                const signOutBtn = document.createElement('a');
+                signOutBtn.href = '#';
+                signOutBtn.className = 'cta-btn sign-out-btn';
+                signOutBtn.textContent = 'Sign Out';
+                signOutBtn.style.marginLeft = '10px';
+                
+                signOutBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('user');
+                    location.reload();
+                });
+                
+                signInBtn.parentNode.appendChild(signOutBtn);
+            }
+        }
+
+        // Check for existing login
+        const user = localStorage.getItem('user');
+        if (user) {
+            const userData = JSON.parse(user);
+            updateUIForLoggedInUser(userData.email);
+        }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements
+    const createAccountLink = document.getElementById('create-account');
+    const createAccountModal = document.getElementById('create-account-modal');
+    const createAccountForm = document.getElementById('create-account-form');
+    const closeCreateAccountBtn = document.getElementById('close-create-account');
+    const backToSigninLink = document.getElementById('back-to-signin');
+    const signInModal = document.getElementById('sign-in-modal');
+
+    // Initialize users array from localStorage or create empty array
+    let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+    // Show create account modal
+    createAccountLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        signInModal.style.display = 'none';
+        createAccountModal.style.display = 'block';
+    });
+
+    // Close create account modal
+    closeCreateAccountBtn.addEventListener('click', () => {
+        createAccountModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === createAccountModal) {
+            createAccountModal.style.display = 'none';
+        }
+    });
+
+    // Switch back to sign in modal
+    backToSigninLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        createAccountModal.style.display = 'none';
+        signInModal.style.display = 'block';
+    });
+
+    // Handle form submission
+    createAccountForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(createAccountForm);
+        const userData = {
+            fullName: formData.get('fullName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            password: formData.get('password'),
+            confirmPassword: formData.get('confirmPassword')
+        };
+
+        // Validate form data
+        const error = validateUserData(userData);
+        if (error) {
+            showError(error, createAccountForm);
+            return;
+        }
+
+        // Check if email already exists
+        if (users.some(user => user.email === userData.email)) {
+            showError('Email already registered', createAccountForm);
+            return;
+        }
+
+        // Add new user
+        const newUser = {
+            fullName: userData.fullName,
+            email: userData.email,
+            phone: userData.phone,
+            password: userData.password,
+            createdAt: new Date().toISOString()
+        };
+
+        users.push(newUser);
+        localStorage.setItem('registeredUsers', JSON.stringify(users));
+
+        // Show success message and redirect to sign in
+        showSuccess('Account created successfully! Please sign in.', createAccountForm);
+        setTimeout(() => {
+            createAccountModal.style.display = 'none';
+            signInModal.style.display = 'block';
+            createAccountForm.reset();
+        }, 2000);
+    });
+
+    // Validation function
+    function validateUserData(data) {
+        if (data.password !== data.confirmPassword) {
+            return 'Passwords do not match';
+        }
+        if (data.password.length < 6) {
+            return 'Password must be at least 6 characters long';
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+            return 'Please enter a valid email address';
+        }
+        if (!/^\+?\d{10,}$/.test(data.phone.replace(/[\s-]/g, ''))) {
+            return 'Please enter a valid phone number';
+        }
+        return null;
+    }
+
+    // Show error message
+    function showError(message, form) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.color = 'red';
+        errorDiv.style.marginTop = '10px';
+        errorDiv.textContent = message;
+        
+        const existingError = form.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        form.appendChild(errorDiv);
+    }
+
+    // Show success message
+    function showSuccess(message, form) {
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-message';
+        successDiv.style.color = 'green';
+        successDiv.style.marginTop = '10px';
+        successDiv.textContent = message;
+        
+        const existingMessage = form.querySelector('.success-message, .error-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        form.appendChild(successDiv);
+    }
+
+    // Update the existing sign-in functionality to use registered users
+    const signInForm = document.getElementById('sign-in-form');
+    signInForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = signInForm.querySelector('input[type="email"]').value.trim();
+        const password = signInForm.querySelector('input[type="password"]').value;
+
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        const user = registeredUsers.find(u => u.email === email && u.password === password);
+        
+        if (user) {
+            localStorage.setItem('user', JSON.stringify({ 
+                email: user.email,
+                fullName: user.fullName 
+            }));
+            signInModal.style.display = 'none';
+            updateUIForLoggedInUser(user.email);
+            signInForm.reset();
+        } else {
+            showError('Invalid email or password', signInForm);
+        }
+    });
+});
+</script>
+
+</body>
+</html>
